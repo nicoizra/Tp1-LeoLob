@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TP 1"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/ButtonEj1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 1"
+        android:textSize="30dp"
+        android:onClick="ButtonEj1" />
+
+    <Button
+        android:id="@+id/ButtonEj2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 2"
+        android:textSize="30dp"
+        />
+
+    <Button
+        android:id="@+id/ButtonEj3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejercicio 3"
+        android:textSize="30dp"
+        />
+</LinearLayout>
