@@ -53,12 +53,15 @@ public class Ejercicio_1 extends AppCompatActivity {
     }
 
     public void clickMostrar() {
-        String strTexto1, strTexto2, strConcatenado;
+        String strTexto1 , strTexto2, strConcatenado;
+        Integer Cant1, Cant2, Excedente;
 
-        strTexto1 = edtTexto1.getText().toString();
+        if (!(edtTexto1 == null)) {
+            strTexto1 = edtTexto1.getText().toString();
+        } else { strTexto1 = "";}
+        if (!(edtTexto2 == null)){
         strTexto2 = edtTexto2.getText().toString();
-
-        int Cant1, Cant2, Excedente;
+        } else { strTexto2 = "";}
 
         Cant1 = strTexto1.length();
         Cant2 = strTexto2.length();
@@ -77,8 +80,8 @@ public class Ejercicio_1 extends AppCompatActivity {
                 txtExcedente.setText("La segunda palabra tiene " + Excedente + " letras mas que la primera.");
             }
         }
-        strConcatenado = strTexto1.substring(0,3) + strTexto2.substring(0,3);
-        txt3Primeros.setText(strConcatenado);
+//        strConcatenado = strTexto1.substring(0,3) + strTexto2.substring(0,3);
+//        txt3Primeros.setText(strConcatenado);
     }
 
 }
