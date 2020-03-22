@@ -66,8 +66,8 @@ public class Ejercicio_1 extends AppCompatActivity {
         Cant1 = strTexto1.length();
         Cant2 = strTexto2.length();
         if(Cant1 == 0 || Cant2 == 0){
-            Toast.makeText(this, "puto", Toast.LENGTH_SHORT).show();
-            //txtLength.setText("Ingresa algo, cabron");
+            Toast.makeText(this, "Ingresa algo, cabron", Toast.LENGTH_SHORT).show();
+
         }
         else{
             txtLength.setText("La primera palabra tiene " + Cant1 + " letras, y la segunda " + Cant2);
@@ -79,9 +79,10 @@ public class Ejercicio_1 extends AppCompatActivity {
                 Excedente=Cant2-Cant1;
                 txtExcedente.setText("La segunda palabra tiene " + Excedente + " letras mas que la primera.");
             }
+            if(Cant1 >= 3 && Cant2 >= 3) {
+                strConcatenado = strTexto1.substring(0, 3) + strTexto2.substring(0, 3);
+                txt3Primeros.setText("La concatenacion seria: "+strConcatenado);
+            }
         }
-//        strConcatenado = strTexto1.substring(0,3) + strTexto2.substring(0,3);
-//        txt3Primeros.setText(strConcatenado);
     }
-
 }

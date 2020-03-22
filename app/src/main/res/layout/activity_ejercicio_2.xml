@@ -12,45 +12,30 @@
         android:textSize="20dp"/>
 
     <EditText
-        android:id="@+id/Text1"
+        android:id="@+id/Texto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese una palabra"
         android:textSize="30dp"
         android:inputType="text"/>
 
-    <EditText
-        android:id="@+id/Text2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ingrese otra palabra"
-        android:textSize="30dp"
-        android:inputType="text"/>
+    <CheckBox
+        android:id="@+id/Checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/ButtonMostrar"
+        android:id="@+id/ButtonVer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mostrar"
+        android:text="Ver"
         android:textSize="30dp"/>
 
     <TextView
-        android:id="@+id/TextViewLength"
-        android:layout_width="match_parent"
+        android:id="@+id/TxtAlerta"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp" />
-    <TextView
-        android:id="@+id/TextViewExcede"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"/>
-
-    <TextView
-        android:id="@+id/TextView3Primeros"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"/>
-
-
+        android:text=""
+        android:textSize="30dp"/>
 
 </LinearLayout>
