@@ -56,11 +56,18 @@ public class Ejercicio_3 extends AppCompatActivity {
     private void clickInvertir(){
         String strTexto="", strTextoInvertido="";
         strTexto=edtTexto.getText().toString();
+        if(strTexto.length()<10){
+            txtTextoInvertido.setText("");
+            Toast.makeText(this, "La idea es que tenga mas de 10 caracteres", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            for(Integer i = strTexto.length()-1;i >= 0;i--){
+                strTextoInvertido = strTextoInvertido + strTexto.charAt(i);
+            }
 
-        for(Integer i = strTexto.length()-1;i >= 0;i--){
-            strTextoInvertido = strTextoInvertido + strTexto.charAt(i);
+            txtTextoInvertido.setText(strTextoInvertido);
         }
 
-        txtTextoInvertido.setText(strTextoInvertido);
+
     }
 }

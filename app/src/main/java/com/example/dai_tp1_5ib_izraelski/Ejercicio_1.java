@@ -7,13 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Ejercicio_1 extends AppCompatActivity {
     EditText edtTexto1,edtTexto2;
-    TextView txtLength, txtExcedente, txt3Primeros;
+    TextView txtLength, txtExcedente, txt3Primeros, txtProgreso;
     Button btnVolver, btnMostrar;
+    SeekBar seekBar;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,9 @@ public class Ejercicio_1 extends AppCompatActivity {
         txt3Primeros=findViewById(R.id.TextView3Primeros);
         btnVolver = findViewById(R.id.ButtonVolver);
         btnMostrar = findViewById(R.id.ButtonMostrar);
+        txtProgreso = findViewById(R.id.txtProgreso);
+        seekBar = findViewById(R.id.SeekBar);
+
     }
 
     public void setButtonListeners(){
@@ -42,6 +50,22 @@ public class Ejercicio_1 extends AppCompatActivity {
         btnMostrar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clickMostrar();
+            }
+        });
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                txtProgreso.setText(""+progress+"");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
@@ -79,8 +103,10 @@ public class Ejercicio_1 extends AppCompatActivity {
                 Excedente=Cant2-Cant1;
                 txtExcedente.setText("La segunda palabra tiene " + Excedente + " letras mas que la primera.");
             }
-            if(Cant1 >= 3 && Cant2 >= 3) {
-                strConcatenado = strTexto1.substring(0, 3) + strTexto2.substring(0, 3);
+            Integer iProgreso;
+            iProgreso=seekBar.getProgress();
+            if(Cant1 >= iProgreso && Cant2 >= iProgreso) {
+                strConcatenado = strTexto1.substring(0, iProgreso) + strTexto2.substring(0, iProgreso);
                 txt3Primeros.setText("La concatenacion seria: "+strConcatenado);
             }
         }

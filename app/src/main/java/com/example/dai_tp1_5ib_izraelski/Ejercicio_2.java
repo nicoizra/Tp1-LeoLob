@@ -15,7 +15,7 @@ public class Ejercicio_2 extends AppCompatActivity {
     Button btnVolver, btnVer;
     CheckBox checkBox;
     EditText edtTexto;
-    TextView txtAlerta;
+    TextView txtCantidadA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class Ejercicio_2 extends AppCompatActivity {
         btnVer=findViewById(R.id.ButtonVer);
         checkBox=findViewById(R.id.Checkbox);
         edtTexto=findViewById(R.id.Texto);
-        txtAlerta=findViewById(R.id.TxtAlerta);
+        txtCantidadA=findViewById(R.id.TxtCantidadA);
     }
 
     private void setListeners(){
@@ -56,8 +56,25 @@ public class Ejercicio_2 extends AppCompatActivity {
     }
 
     private void clickVer() {
-        if(checkBox.isChecked() && edtTexto.getText().toString().length() <= 10){
-            Toast.makeText(this, "El texto no tiene mas de 10 caracteres", Toast.LENGTH_SHORT).show();
+        String strTexto = edtTexto.getText().toString();
+        Integer iCant=0;
+
+        for (Integer i = 0; i < strTexto.length(); i++) {
+            if (strTexto.charAt(i) == 'a' || strTexto.charAt(i) == 'A') {
+                iCant++;
+            }
+        }
+        if(!checkBox.isChecked()) {
+            txtCantidadA.setText("El texto tiene " + iCant + " cantidad de letras A");
+        }
+        else{
+            if(strTexto.length() <= 10){
+                Toast.makeText(this, "El texto no tiene mas de 10 caracteres", Toast.LENGTH_SHORT).show();
+                txtCantidadA.setText("");
+            }
+            else{
+                txtCantidadA.setText("El texto tiene " + iCant + " letras A");
+            }
         }
     }
 }

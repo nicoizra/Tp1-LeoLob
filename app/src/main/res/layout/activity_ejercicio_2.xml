@@ -22,7 +22,8 @@
     <CheckBox
         android:id="@+id/Checkbox"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Limitar cantidad de caracteres"/>
 
     <Button
         android:id="@+id/ButtonVer"
@@ -32,7 +33,7 @@
         android:textSize="30dp"/>
 
     <TextView
-        android:id="@+id/TxtAlerta"
+        android:id="@+id/TxtCantidadA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
